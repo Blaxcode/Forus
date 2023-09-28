@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+}
+/* =========== SELECTION ========== */
+::selection{
+    background: var(--main-color);
+    color: var(--white-color);
+}
+/* =========== VARIABLES ========== */
+:root{
+    /* ---------- Color ----------- */
+    --main-color: #FF841F;
+    --dark-color: #331E0C;
+    --black-color: #333;
+    --white-color: #fff;
+    --body-color: #f8f0f9;
+    --text-color:   #888;
+    /* ---------- Typography ----------- */
+    --h1-font-size: 50px;
+    --h2-font-size: 35px;
+    --h3-font-size: 18px;
+    --paragraph-font-size: 15px;
+    /* ---------- Font Weight ----------- */
+    --font-medium: 700;
+    --font-light: 300;
+    /* ---------- z-index ----------- */
+    --tool-tip: 10;
+    --fixed: 100;
+    /* ---------- z-index ----------- */
+    --transition: 0.4s;
+    --container-width: 85%;
+}    
+
+/* =========== BASE ========== */
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+button{
+    border: none;
+    outline: none;
+}
+
+/* =========== REUSEABLES ========== */
+.container{
+    width: var(--container-width);
+    margin: 0 auto;
+}
+.section{
+    padding: 100px 0;
+}
+.button{
+    color: var(--white-color);
+    background: var(--main-color);
+}
+
+/* =========== HEADER ========== */
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+    z-index: var(--fixed);
+}
+/* ------------ scroll header ----- */
+.scroll_header{
+    background: var(--white-color);
+}
+.scroll_header .navbar{
+    padding: 20px 0;
+}
+.scroll_header .nav_logo{
+    color: var(--black-color);
+}
+.scroll_header .nav_logo_img{
+    filter: invert(0);
+    -webkit-filter: invert(0);
+}
+.scroll_header .nav_link{
+    color: var(--black-color);
+}
+.scroll_header .nav_link::after{
+    background: var(--text-color);
+}
+.navbar{
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.nav_logo{
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--paragraph-font-size);
+    font-weight: var(--font-medium);
+    color: var(--white-color);
+}
+.nav_logo span{
+    text-decoration: underline;
+}
+.nav_logo_img{
+    width: 17px;
+    margin-right: 6px;
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+.nav_list{
+    display: flex;
+    column-gap: 30px;
+}
+.nav_link{
+    color: var(--white-color);
+    font-weight: var(--font-light);
+    letter-spacing: 1px;
+    position: relative;
+}
+.nav_link::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background: var(--white-color);
+    left: 0;
+    bottom: -3px;
+    transition:var(--transition);
+    -webkit-transition:var(--transition);
+    -moz-transition:var(--transition);
+    -ms-transition:var(--transition);
+    -o-transition:var(--transition);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transform-origin: left;
+}
+.nav_link:hover::after{
+    transform-origin: right;
+    width: 30%;
+}
+
+/* =========== HOME ========== */
+.home{
+    width: 100%;
+    height: 100vh;
+    background: url('https://img.freepik.com/free-photo/vibrant-scenery-river-middle-forest-yakushima-japan_181624-42970.jpg?w=740&t=st=1695795003~exp=1695795603~hmac=1b8feb240594e719cd7e7394ea65c3076b2f9cd378e0301d2a9beeed9b26f0f4');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.home_content{
+    color: var(--white-color);
+    transform: translateY(60%);
+    -webkit-transform: translateY(60%);
+    -moz-transform: translateY(60%);
+    -ms-transform: translateY(60%);
+    -o-transform: translateY(60%);
+}
+.home_line{
+    display: inline-block;
+    width: 80px;
+    height: 7px;
+    background: var(--white-color);
+    margin-bottom: 20px;
+}
+.home_title{
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-medium);
+    text-transform: capitalize;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.home_description{
+    width: 500px;
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.home_booking{
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: -50px;
+    background: var(--white-color);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 70px 10px 100px rgba(0,0,0,0.3);
+}
+.home_booking_drop_down{
+    display: inline-flex;
+    align-items: center;
+    column-gap: 5px;
+    color: var(--text-color);
+    font-size: var(--paragraph-font-size);
+}
+.home_booking_drop_down_title{
+    font-size: var(--h3-font-size);
+    color: var(--black-color);
+    margin-top: 10px;
+}
+.booking_search_button{
+    background: var(--main-color);
+    color: var(--white-color);
+    position: absolute;
+    top: 0;
+    right: -120px;
+    height: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.booking_search_button i{
+    font-size: 30px;
+}
+
+/* =============== POPULAR ========== */
+.popular_header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.popular_title{
+    color: var(--black-color);
+    font-size: var(--h2-font-size);
+}
+.popular_description{
+    width: 500px;
+    line-height: 1.5;
+}
+.popular_slider_wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+.popular_slide{
+    width: auto; 
+    height: 220px;
+    position: relative;
+    margin: 0 8px;
+}
+.popular_slide_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.popular_slide_info{
+    z-index: var(--tool-tip);
+}
+.popular_slide_image_title{
+    font-size: var(--h3-font-size);
+    line-height: 2;
+}
+.popular_slide_image_description{
+    font-size: var(--paragraph-font-size);
+}
+.popular_slide_image_button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background: var(--main-color);
+    color: var(--white-color);
+    font-size: var(--h3-font-size);
+}
